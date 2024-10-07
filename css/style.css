@@ -12,7 +12,9 @@
     --font-base: 13px;
     --w-font-medium: 500;
     --w-font-semi-bold: 600;
-    --font-l: 1.5rem;
+    --font-l: 1.56rem;
+    --max-width-card: 25.15rem;
+    --max-width-grid: 85.4rem;
 }
 
 html {
@@ -31,16 +33,16 @@ main {
 
 .testimonials {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-32);
-    margin: 0 var(--spacing-32);
+    grid-template-columns: var(--max-width-card);
+    gap: var(--spacing-24);
+    margin: calc(var(--spacing-32)*2) var(--spacing-24);
+    max-width: var(--max-width-grid);
 }
 
 .testimonials__testimonial-box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: start;
+    justify-content: flex-start;
     gap: var(--spacing-24);
     padding: var(--spacing-24) var(--spacing-32);
     background-color: var(--white);
@@ -59,6 +61,18 @@ main {
     background-color: var(--very-dark-blackish-blue);
 }
 
+.testimonials__testimonial-box:nth-child(1) {
+    position: relative;
+    z-index: 10;
+}
+
+.testimonials__svg {
+    position: absolute;
+    top: 0;
+    right: clamp(var(--spacing-24), 1vw + 1rem, calc(var(--spacing-24)*2));
+    z-index: -1;
+}
+
 .testimonials__profile-content {
     display: flex;
     align-items: center;
@@ -68,6 +82,11 @@ main {
 .testimonials__profile-image {
     width: 2.5rem;
     border-radius: 50%;
+    border: .2rem solid #ffffff80;
+}
+
+.testimonials__profile-image--border-violet {
+    border-color: var(--moderate-violet);
 }
 
 .testimonials__text {
@@ -82,6 +101,7 @@ main {
 .testimonials__text--title {
     font-weight: var(--w-font-semi-bold);
     font-size: var(--font-l);
+    line-height: 1.3;
 }
 
 .testimonials__text--white {
@@ -98,3 +118,38 @@ main {
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
+
+@media (min-width: 77rem) {
+    .testimonials {
+        grid-template-columns: repeat(4, 19.61rem);
+        grid-template-rows: repeat(2, auto);
+    }
+
+    .testimonials__testimonial-box {
+        gap: 1rem;
+    }
+
+    .testimonials__testimonial-box:nth-child(1) {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+
+    .testimonials__testimonial-box:nth-child(3) {
+        grid-area: 2 / 1 / 3 / 2;
+    }
+
+    .testimonials__testimonial-box:nth-child(4) {
+        grid-area: 2 / 2 / 3 / 4;
+    }
+
+    .testimonials__testimonial-box:nth-child(5) {
+        grid-area: 1 / 4 / 3 / 5;
+    }
+
+    .testimonials__text--title {
+        font-size: 1.45rem;
+    }
+
+    .testimonials__svg {
+        right: calc(var(--spacing-24) * 4);
+    }
+}
