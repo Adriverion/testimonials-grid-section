@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --moderate-violet: #7541c8;
+    --very-dark-grayish-blue: #48556a;
+    --very-dark-blackish-blue: #19212e;
+    --white: #ffffff;
+    --light-gray: #cfcfcf;
+    --light-grayish-blue: #ecf2f8;
+    --spacing-32: 2.46rem;
+    --spacing-24: 1.84rem;
+    --font-base: 13px;
+    --w-font-medium: 500;
+    --w-font-semi-bold: 600;
+    --font-l: 1.2rem;
+}
+
+html {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-size: var(--font-base);
+    background-color: var(--light-gray);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-32);
+    margin: 0 var(--spacing-32);
+}
+
+.testimonials__testimonial-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: var(--spacing-24);
+    padding: var(--spacing-24) var(--spacing-32);
+    background-color: var(--white);
+    border-radius: 1rem;
+}
+
+.testimonials__testimonial-box--violet {
+    background-color: var(--moderate-violet);
+}
+
+.testimonials__testimonial-box--gray {
+    background-color: var(--very-dark-grayish-blue);
+}
+
+.testimonials__testimonial-box--dark-blue {
+    background-color: var(--very-dark-blackish-blue);
+}
+
+.testimonials__profile-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.testimonials__profile-image {
+    width: 2.5rem;
+    border-radius: 50%;
+}
+
+.testimonials__text {
+    font-weight: var(--w-font-medium);
+    color: var(--very-dark-grayish-blue);
+    text-align: start;
+    line-height: 1.5;
+    margin: 0;
+}
+
+
+.testimonials__text--title {
+    font-weight: var(--w-font-semi-bold);
+    font-size: var(--font-l);
+}
+
+.testimonials__text--white {
+    color: var(--white);
+}
+
+.testimonials__text--opacity-50 {
+    opacity: .5;
+}
+
+.testimonials__text--opacity-70 {
+    opacity: .7;
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
