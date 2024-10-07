@@ -20,7 +20,7 @@
 html {
     font-family: "Barlow Semi Condensed", sans-serif;
     font-size: var(--font-base);
-    background-color: var(--light-gray);
+    background-color: var(--light-grayish-blue);
 }
 
 main {
